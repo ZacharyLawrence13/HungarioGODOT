@@ -15,6 +15,7 @@ day = null
 [node name="HUD" parent="." index="1" instance=ExtResource( 3 )]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
 scale = Vector2( 0.75, 0.75 )
@@ -25,6 +26,9 @@ health_max = 100
 [node name="HUD" parent="." index="2" instance=ExtResource( 4 )]
 
 [node name="DayTimer" type="Timer" parent="." index="3"]
+=======
+[node name="DayTimer" type="Timer" parent="." index="2"]
+>>>>>>> dc988bb200b4aeee71dcfb09fd617e55854cadc2
 =======
 [node name="DayTimer" type="Timer" parent="." index="2"]
 >>>>>>> dc988bb200b4aeee71dcfb09fd617e55854cadc2
