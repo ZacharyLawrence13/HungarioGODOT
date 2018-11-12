@@ -16,13 +16,33 @@ position = Vector2( 557.286, 213.192 )
 scale = Vector2( 0.205011, 0.212385 )
 texture = ExtResource( 2 )
 
+<<<<<<< HEAD
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
 scale = Vector2( 0.75, 0.75 )
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
+
+scale = Vector2( 0.75, 0.75 )
+food_max = 100
+health = 100
+health_max = 100
+>>>>>>> a95eb1b0ae981f280a38f9fde350a32b17644845
 
 [node name="HUD" parent="." index="2" instance=ExtResource( 4 )]
 
 [node name="DayTimer" type="Timer" parent="." index="3"]
+<<<<<<< HEAD
+=======
+=======
+[node name="DayTimer" type="Timer" parent="." index="2"]
+>>>>>>> dc988bb200b4aeee71dcfb09fd617e55854cadc2
+=======
+[node name="DayTimer" type="Timer" parent="." index="2"]
+>>>>>>> dc988bb200b4aeee71dcfb09fd617e55854cadc2
+>>>>>>> a95eb1b0ae981f280a38f9fde350a32b17644845
 
 process_mode = 1
 wait_time = 150.0
