@@ -26,14 +26,12 @@ var screensize = Vector2(1920, 1080)
 var mouse_position
 
 func _ready():
-	pass
+	$AnimatedSprite.animation = "idle"
 
 
 func start(pos):
 	set_process(true)
 	position = pos
-	$AnimatedSprite.animation = "idle"
-
 
 func _process(delta):
 	get_input()
@@ -70,10 +68,15 @@ func get_input():
 
 
 	if Input.is_action_just_pressed("ui_attack"):
+		$AnimatedSprite.animation = "attack"
+		print ($AnimatedSprite.animation)
 		print ("Subtracted 10 from this rock")		#### 
 		emit_signal("hit_rock")						#### ROCK STUFF
 		rocks += 10									#### ADDS ROCKS, SENDS OUT A SIGNAL
 		print ("Player now has ", rocks, " rocks")	####
+		
+	if Input.is_action_just_released("ui_attack"):
+		$AnimatedSprite.animation = "idle"
 
 
 func check_stats():
