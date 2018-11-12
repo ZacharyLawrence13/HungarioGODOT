@@ -5,6 +5,8 @@ export (bool) var day
 func _ready():
 	print("Starting food: ", $Player.food)
 	print("Starting health: ", $Player.health)
+	print("Starting water: ", $Player.water)
+	print("Starting heat: ", $Player.heat)
 
 #when the day timer finishes...
 func _on_DayTimer_timeout():

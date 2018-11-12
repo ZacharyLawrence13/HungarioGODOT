@@ -27,7 +27,7 @@ tracks/0/keys = {
 "values": [ 0, 13 ]
 }
 
-[node name="Player" type="Area2D" index="0"]
+[node name="Player" type="Area2D"]
 
 position = Vector2( 100, 100 )
 scale = Vector2( 0.2, 0.2 )
