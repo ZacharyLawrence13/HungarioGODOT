@@ -19,15 +19,6 @@ texture = ExtResource( 2 )
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
 scale = Vector2( 0.75, 0.75 )
-food = 100
-food_max = 100
-health = 100
-health_max = 100
-heat = 100
-heat_max = 100
-water = 100
-water_max = 100
-rocks = 0
 
 [node name="HUD" parent="." index="2" instance=ExtResource( 4 )]
 

@@ -1,15 +1,23 @@
 extends Area2D
 
+signal die
+
 export (int) var speed
+
+export (int) var health = 100
+export (int) var health_max = 100
 
 export (int) var food = 100
 export (int) var food_max = 100
-export (int) var health = 100
-export (int) var health_max = 100
+export (int) var food_damge = 5
+
 export (int) var heat = 100
 export (int) var heat_max = 100
+export (int) var heat_damage = 5
+
 export (int) var water = 100
 export (int) var water_max = 100
+export (int) var water_damage = 5
 
 export (int) var rocks = 0
 
@@ -29,6 +37,7 @@ func start(pos):
 
 func _process(delta):
 	get_input()
+	check_stats()
 	position += velocity * delta
 
 
@@ -50,32 +59,47 @@ func get_input():
 	#Cancel button for in game
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().quit()
-	
+
+
 	#THIS IS ONLY TEMP
 	#when space is pressed...
 	if Input.is_action_just_pressed("ui_select"):
 		print("Added 5 food!")
 		food += 5
-
-		print("Added 5 food!")
-		food += 5
 		#if food is more than the max...
-		if food > food_max:
-			#set food to the max
-			food = food_max
 
-		#print("Added 5 food!")
-		food += 5									## WHEN FOOD IS EATEN, THIS ADDS FOOD
 
+	if Input.is_action_just_pressed("ui_attack"):
 		print ("Subtracted 10 from this rock")		#### 
 		emit_signal("hit_rock")						#### ROCK STUFF
 		rocks += 10									#### ADDS ROCKS, SENDS OUT A SIGNAL
 		print ("Player now has ", rocks, " rocks")	####
-	
+
+
+func check_stats():
 	#if food is more than none...
 	if food > 0:
 		#stop damage timer
 		$HungerDamageTimer.stop()
+
+	if food > food_max:
+		#set food to the max
+		food = food_max
+
+	if heat > 0:
+		$HeatDamageTimer.stop()
+
+	if heat > heat_max:
+		heat = heat_max
+
+	if water > 0:
+		$WaterDamageTimer.stop()
+
+	if water > water_max:
+		water = water_max
+
+	if health <= 0:
+		signal("die")
 
 
 func _on_HungerTimer_timeout():
