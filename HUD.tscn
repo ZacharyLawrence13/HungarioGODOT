@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/White_square.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Item Placeholder.png" type="Texture" id=2]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -21,11 +22,23 @@ scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="ItemBox1" type="Sprite" parent="Hotbar/Item1" index="0"]
+
+scale = Vector2( 5.45, 5.45 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="Item2" type="Sprite" parent="Hotbar" index="1"]
 
 position = Vector2( 720, 1000 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ItemBox2" type="Sprite" parent="Hotbar/Item2" index="0"]
+
+scale = Vector2( 5.45, 5.45 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Item3" type="Sprite" parent="Hotbar" index="2"]
@@ -35,11 +48,23 @@ scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="ItemBox3" type="Sprite" parent="Hotbar/Item3" index="0"]
+
+scale = Vector2( 5.45, 5.45 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="Item4" type="Sprite" parent="Hotbar" index="3"]
 
 position = Vector2( 880, 1000 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ItemBox4" type="Sprite" parent="Hotbar/Item4" index="0"]
+
+scale = Vector2( 5.45, 5.45 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Item5" type="Sprite" parent="Hotbar" index="4"]
@@ -49,11 +74,23 @@ scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="ItemBox5" type="Sprite" parent="Hotbar/Item5" index="0"]
+
+scale = Vector2( 5.45, 5.45 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="Item6" type="Sprite" parent="Hotbar" index="5"]
 
 position = Vector2( 1040, 1000 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ItemBox6" type="Sprite" parent="Hotbar/Item6" index="0"]
+
+scale = Vector2( 5.45, 5.45 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Item7" type="Sprite" parent="Hotbar" index="6"]
@@ -63,6 +100,12 @@ scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="ItemBox7" type="Sprite" parent="Hotbar/Item7" index="0"]
+
+scale = Vector2( 5.45, 5.45 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="Item8" type="Sprite" parent="Hotbar" index="7"]
 
 position = Vector2( 1200, 1000 )
@@ -70,11 +113,23 @@ scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="ItemBox8" type="Sprite" parent="Hotbar/Item8" index="0"]
+
+scale = Vector2( 5.45, 5.45 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="Item9" type="Sprite" parent="Hotbar" index="8"]
 
 position = Vector2( 1280, 1000 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ItemBox9" type="Sprite" parent="Hotbar/Item9" index="0"]
+
+scale = Vector2( 5.45, 5.45 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Statpanel" type="Node" parent="." index="1"]
@@ -87,13 +142,25 @@ scale = Vector2( 0.25, 0.025 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
+[node name="HealthBarOutline" type="Sprite" parent="Statpanel/HealthBar" index="0"]
+
+scale = Vector2( 5.4, 5.5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="HungerBar" type="Sprite" parent="Statpanel" index="1"]
 
 modulate = Color( 0.72549, 0.427451, 0.25098, 1 )
 position = Vector2( 870, 925 )
 scale = Vector2( 0.25, 0.025 )
 texture = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform" ]
+
+[node name="HungerBarOutline" type="Sprite" parent="Statpanel/HungerBar" index="0"]
+
+scale = Vector2( 5.4, 5.5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="WaterBar" type="Sprite" parent="Statpanel" index="2"]
 
@@ -103,6 +170,12 @@ scale = Vector2( 0.25, 0.025 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
+[node name="WaterBarOutline" type="Sprite" parent="Statpanel/WaterBar" index="0"]
+
+scale = Vector2( 5.4, 5.5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="HeatBar" type="Sprite" parent="Statpanel" index="3"]
 
 modulate = Color( 0.168627, 0.34902, 0.352941, 1 )
@@ -110,5 +183,11 @@ position = Vector2( 1230, 925 )
 scale = Vector2( 0.25, 0.025 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="HeatBarOutline" type="Sprite" parent="Statpanel/HeatBar" index="0"]
+
+scale = Vector2( 5.4, 5.5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 

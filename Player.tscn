@@ -1,58 +1,33 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Player/Idle/Player_Idle_01.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Player/Idle/Player_Idle_02.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Player/Idle/Player_Idle_03.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Player/Idle/Player_Idle_04.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Player/Idle/Player_Idle_05.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Player/Idle/Player_Idle_06.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Player/Idle/Player_Idle_07.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Player/Idle/Player_Idle_08.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Player/Idle/Player_Idle_09.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Player/Idle/Player_Idle_10.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Player/Idle/Player_Idle_11.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Player/Idle/Player_Idle_12.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Player/Idle/Player_Idle_13.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Player/Idle/Player_Idle_14.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Player/Attack/Hungario-Player-Hit_01.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Player/Attack/Hungario-Player-Hit_02.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Player/Attack/Hungario-Player-Hit_03.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Player/Attack/Hungario-Player-Hit_04.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Player/Attack/Hungario-Player-Hit_05.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Player/Attack/Hungario-Player-Hit_06.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Player/Attack/Hungario-Player-Hit_07.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Player/Attack/Hungario-Player-Hit_08.png" type="Texture" id=23]
-[ext_resource path="res://Assets/Player/Attack/Hungario-Player-Hit_09.png" type="Texture" id=24]
-[ext_resource path="res://Assets/Player/Attack/Hungario-Player-Hit_10.png" type="Texture" id=25]
-[ext_resource path="res://Assets/Player/Attack/Hungario-Player-Hit_11.png" type="Texture" id=26]
-[ext_resource path="res://Assets/Player/Attack/Hungario-Player-Hit_12.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Player/Attack/Hungario-Player-Hit_13.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Player/Attack/Hungario-Player-Hit_14.png" type="Texture" id=29]
-[ext_resource path="res://Assets/Player/Attack/Hungario-Player-Hit_15.png" type="Texture" id=30]
-[ext_resource path="res://Assets/Player/Attack/Hungario-Player-Hit_16.png" type="Texture" id=31]
-[ext_resource path="res://Assets/Player/Attack/Hungario-Player-Hit_17.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Player/Idle/Player_Idle.png" type="Texture" id=2]
 
-[sub_resource type="SpriteFrames" id=1]
-
-animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "idle",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
-"loop": true,
-"name": "attack",
-"speed": 20.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 71.1106, 32.4032 )
 
-[node name="Player" type="Area2D" index="0"]
+[sub_resource type="Animation" id=2]
+
+resource_name = "idle"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 13 ]
+}
+
+[node name="Player" type="Area2D"]
 
 position = Vector2( 100, 100 )
 scale = Vector2( 0.2, 0.2 )
@@ -79,19 +54,11 @@ water_max = 100
 water_damage = 5
 rocks = 0
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-scale = Vector2( 1, 1 )
-frames = SubResource( 1 )
-animation = "attack"
-frame = 16
-playing = true
+shape = SubResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
-shape = SubResource( 2 )
-
-[node name="Camera2D" type="Camera2D" parent="." index="2"]
+[node name="Camera2D" type="Camera2D" parent="." index="1"]
 
 anchor_mode = 1
 rotating = false
@@ -116,6 +83,25 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Drag Margin" ]
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 3
+frame = 13
+region_rect = Rect2( 240, 0, 0, 0 )
+_sections_unfolded = [ "Animation" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="0"]
+
+root_node = NodePath("..")
+autoplay = "idle"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/idle = SubResource( 2 )
+blend_times = [  ]
 
 [node name="HungerTimer" type="Timer" parent="." index="3"]
 
