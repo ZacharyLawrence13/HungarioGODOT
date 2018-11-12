@@ -41,7 +41,6 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 speed = 500
-<<<<<<< HEAD
 food = 100
 food_max = 100
 health = 100
@@ -50,23 +49,7 @@ heat = 100
 heat_max = 100
 water = 100
 water_max = 100
-=======
-food = 5
-health = 50
-<<<<<<< HEAD
-=======
 rocks = 0
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
-
-frames = SubResource( 1 )
-animation = "idle"
-frame = 11
-<<<<<<< HEAD
->>>>>>> dc988bb200b4aeee71dcfb09fd617e55854cadc2
-=======
->>>>>>> dc988bb200b4aeee71dcfb09fd617e55854cadc2
->>>>>>> a95eb1b0ae981f280a38f9fde350a32b17644845
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 

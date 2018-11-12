@@ -54,21 +54,15 @@ func get_input():
 	#THIS IS ONLY TEMP
 	#when space is pressed...
 	if Input.is_action_just_pressed("ui_select"):
-<<<<<<< HEAD
 		print("Added 5 food!")
 		food += 5
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 		print("Added 5 food!")
 		food += 5
 		#if food is more than the max...
 		if food > food_max:
 			#set food to the max
 			food = food_max
-=======
-=======
->>>>>>> dc988bb200b4aeee71dcfb09fd617e55854cadc2
 
 		#print("Added 5 food!")
 		food += 5									## WHEN FOOD IS EATEN, THIS ADDS FOOD
@@ -77,11 +71,6 @@ func get_input():
 		emit_signal("hit_rock")						#### ROCK STUFF
 		rocks += 10									#### ADDS ROCKS, SENDS OUT A SIGNAL
 		print ("Player now has ", rocks, " rocks")	####
-<<<<<<< HEAD
->>>>>>> dc988bb200b4aeee71dcfb09fd617e55854cadc2
-=======
->>>>>>> dc988bb200b4aeee71dcfb09fd617e55854cadc2
->>>>>>> a95eb1b0ae981f280a38f9fde350a32b17644845
 	
 	#if food is more than none...
 	if food > 0:
