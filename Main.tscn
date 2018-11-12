@@ -19,6 +19,9 @@ texture = ExtResource( 2 )
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
 scale = Vector2( 0.75, 0.75 )
+food = 2
+heat = 2
+water = 2
 
 [node name="HUD" parent="." index="2" instance=ExtResource( 4 )]
 
@@ -28,6 +31,14 @@ process_mode = 1
 wait_time = 150.0
 one_shot = false
 autostart = true
+
+[connection signal="food_minus" from="Player" to="." method="_on_Player_food_minus"]
+
+[connection signal="health_minus" from="Player" to="." method="_on_Player_health_minus"]
+
+[connection signal="heat_minus" from="Player" to="." method="_on_Player_heat_minus"]
+
+[connection signal="water_minus" from="Player" to="." method="_on_Player_water_minus"]
 
 [connection signal="timeout" from="DayTimer" to="." method="_on_DayTimer_timeout"]
 

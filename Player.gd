@@ -2,6 +2,11 @@ extends Area2D
 
 signal die
 
+signal food_minus
+signal heat_minus
+signal water_minus
+signal health_minus
+
 export (int) var speed
 
 export (int) var health = 100
@@ -9,7 +14,7 @@ export (int) var health_max = 100
 
 export (int) var food = 100
 export (int) var food_max = 100
-export (int) var food_damge = 5
+export (int) var food_damage = 5
 
 export (int) var heat = 100
 export (int) var heat_max = 100
@@ -101,6 +106,9 @@ func check_stats():
 	if water > water_max:
 		water = water_max
 
+	if health > health_max:
+		health = health_max
+		
 	if health <= 0:
 		signal("die")
 
@@ -110,6 +118,7 @@ func _on_HungerTimer_timeout():
 	if food > 0:
 		#subtract 1 food after timer
 		food -= 1
+		emit_signal("food_minus")
 	print("Food Left: ", food)
 	#if food is none & damage timer is not started already...
 	if food <= 0 && $HungerDamageTimer.is_stopped():
@@ -119,7 +128,8 @@ func _on_HungerTimer_timeout():
 
 func _on_HungerDamageTimer_timeout():
 	#subtract 5 health after timer
-	health -= 5
+	health -= food_damage
+	emit_signal("health_minus")
 	print("Health left: ", health)
 
 
@@ -128,6 +138,7 @@ func _on_HeatTimer_timeout():
 	if heat > 0:
 		#subtract 1 heat after timer
 		heat -= 1
+		emit_signal("heat_minus")
 	print("Heat Left: ", heat)
 	#if heat is none & damage timer is not started already...
 	if heat <= 0 && $HeatDamageTimer.is_stopped():
@@ -137,7 +148,8 @@ func _on_HeatTimer_timeout():
 
 func _on_HeatDamageTimer_timeout():
 	#subtract 5 health after timer
-	health -= 10
+	health -= heat_damage
+	emit_signal("health_minus")
 	print("Health left: ", health)
 
 
@@ -146,6 +158,7 @@ func _on_WaterTimer_timeout():
 	if water > 0:
 		#subtract 1 water after timer
 		water -= 1
+		emit_signal("water_minus")
 	print("Water Left: ", water)
 	#if water is none & damage timer is not started already...
 	if water <= 0 && $WaterDamageTimer.is_stopped():
@@ -155,5 +168,6 @@ func _on_WaterTimer_timeout():
 
 func _on_WaterDamageTimer_timeout():
 	#subtract 5 health after timer
-	health -= 10
+	health -= water_damage
+	emit_signal("health_minus")
 	print("Health left: ", health)

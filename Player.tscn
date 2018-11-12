@@ -70,7 +70,7 @@ health = 100
 health_max = 100
 food = 100
 food_max = 100
-food_damge = 5
+food_damage = 5
 heat = 100
 heat_max = 100
 heat_damage = 5
@@ -84,7 +84,7 @@ rocks = 0
 scale = Vector2( 1, 1 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 12
+frame = 8
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]

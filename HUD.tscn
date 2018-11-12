@@ -134,60 +134,113 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Statpanel" type="Node" parent="." index="1"]
 
-[node name="HealthBar" type="Sprite" parent="Statpanel" index="0"]
+[node name="HealthBar" type="ProgressBar" parent="Statpanel" index="0"]
 
-modulate = Color( 0.784314, 0.239216, 0.196078, 1 )
-position = Vector2( 690, 925 )
-scale = Vector2( 0.25, 0.025 )
-texture = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+modulate = Color( 0.784314, 0.239216, 0.192157, 1 )
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 599.0
+margin_top = 374.0
+margin_right = -1141.0
+margin_bottom = 396.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 100.0
+exp_edit = false
+rounded = false
+percent_visible = true
+_sections_unfolded = [ "Visibility", "custom_colors" ]
 
-[node name="HealthBarOutline" type="Sprite" parent="Statpanel/HealthBar" index="0"]
+[node name="HungerBar" type="ProgressBar" parent="Statpanel" index="1"]
 
-scale = Vector2( 5.4, 5.5 )
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+modulate = Color( 0.721569, 0.427451, 0.247059, 1 )
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 780.0
+margin_top = 374.0
+margin_right = -960.0
+margin_bottom = 396.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 100.0
+exp_edit = false
+rounded = false
+percent_visible = true
+_sections_unfolded = [ "Visibility", "custom_colors" ]
 
-[node name="HungerBar" type="Sprite" parent="Statpanel" index="1"]
+[node name="WaterBar" type="ProgressBar" parent="Statpanel" index="2"]
 
-modulate = Color( 0.72549, 0.427451, 0.25098, 1 )
-position = Vector2( 870, 925 )
-scale = Vector2( 0.25, 0.025 )
-texture = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+modulate = Color( 0.384314, 0.631373, 0.658824, 1 )
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 960.0
+margin_top = 374.0
+margin_right = -780.0
+margin_bottom = 396.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 100.0
+exp_edit = false
+rounded = false
+percent_visible = true
+_sections_unfolded = [ "Visibility", "custom_colors" ]
 
-[node name="HungerBarOutline" type="Sprite" parent="Statpanel/HungerBar" index="0"]
+[node name="HeatBar" type="ProgressBar" parent="Statpanel" index="3"]
 
-scale = Vector2( 5.4, 5.5 )
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="WaterBar" type="Sprite" parent="Statpanel" index="2"]
-
-modulate = Color( 0.384314, 0.631373, 0.662745, 1 )
-position = Vector2( 1050, 925 )
-scale = Vector2( 0.25, 0.025 )
-texture = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Visibility" ]
-
-[node name="WaterBarOutline" type="Sprite" parent="Statpanel/WaterBar" index="0"]
-
-scale = Vector2( 5.4, 5.5 )
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="HeatBar" type="Sprite" parent="Statpanel" index="3"]
-
-modulate = Color( 0.168627, 0.34902, 0.352941, 1 )
-position = Vector2( 1230, 925 )
-scale = Vector2( 0.25, 0.025 )
-texture = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Visibility" ]
-
-[node name="HeatBarOutline" type="Sprite" parent="Statpanel/HeatBar" index="0"]
-
-scale = Vector2( 5.4, 5.5 )
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+modulate = Color( 0.164706, 0.34902, 0.34902, 1 )
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 1140.0
+margin_top = 374.0
+margin_right = -600.0
+margin_bottom = 396.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Shows Your Heat"
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 100.0
+exp_edit = false
+rounded = false
+percent_visible = true
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
 
 
