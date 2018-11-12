@@ -22,10 +22,3 @@ func day():
 
 func night():
 	pass #do night things
-
-func _on_Player_hit_rock():
-	if $Rock.rock_amount <= 0:
-		print ("This resource is empty")
-		return
-	else:
-		$Rock.rock_amount -= 10
