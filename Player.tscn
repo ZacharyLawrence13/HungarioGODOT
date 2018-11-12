@@ -1,36 +1,38 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Player/Idle/Player_Idle.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Player/Idle/Player_Idle_01.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Player/Idle/Player_Idle_02.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Player/Idle/Player_Idle_03.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Player/Idle/Player_Idle_04.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Player/Idle/Player_Idle_05.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Player/Idle/Player_Idle_06.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Player/Idle/Player_Idle_07.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Player/Idle/Player_Idle_08.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Player/Idle/Player_Idle_09.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Player/Idle/Player_Idle_10.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Player/Idle/Player_Idle_11.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Player/Idle/Player_Idle_12.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Player/Idle/Player_Idle_13.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Player/Idle/Player_Idle_14.png" type="Texture" id=15]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "idle",
+"speed": 14.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 71.1106, 32.4032 )
 
-[sub_resource type="Animation" id=2]
-
-resource_name = "idle"
-length = 1.0
-loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0, 13 ]
-}
-
 [node name="Player" type="Area2D" index="0"]
 
-position = Vector2( 100, 100 )
-scale = Vector2( 0.2, 0.2 )
+scale = Vector2( 0.75, 0.75 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -43,12 +45,19 @@ _sections_unfolded = [ "Transform" ]
 speed = 500
 food = 5
 health = 50
+rocks = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-shape = SubResource( 1 )
+frames = SubResource( 1 )
+animation = "idle"
+frame = 11
 
-[node name="Camera2D" type="Camera2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="2"]
 
 anchor_mode = 1
 rotating = false
@@ -73,25 +82,6 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Drag Margin" ]
-
-[node name="Sprite" type="Sprite" parent="." index="2"]
-
-texture = ExtResource( 2 )
-vframes = 5
-hframes = 3
-frame = 13
-region_rect = Rect2( 240, 0, 0, 0 )
-_sections_unfolded = [ "Animation" ]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="0"]
-
-root_node = NodePath("..")
-autoplay = "idle"
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/idle = SubResource( 2 )
-blend_times = [  ]
 
 [node name="HungerTimer" type="Timer" parent="." index="3"]
 

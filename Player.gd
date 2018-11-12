@@ -1,9 +1,13 @@
 extends Area2D
 
+signal hit_rock
+
 export (int) var speed
 
 export (int) var food = 5
 export (int) var health = 50
+
+export (int) var rocks = 0
 
 var velocity = Vector2()
 var screensize = Vector2(1920, 1080)
@@ -43,8 +47,14 @@ func get_input():
 	#THIS IS ONLY TEMP
 	#when space is pressed...
 	if Input.is_action_just_pressed("ui_select"):
-		print("Added 5 food!")
-		food += 5
+
+		#print("Added 5 food!")
+		food += 5									## WHEN FOOD IS EATEN, THIS ADDS FOOD
+
+		print ("Subtracted 10 from this rock")		#### 
+		emit_signal("hit_rock")						#### ROCK STUFF
+		rocks += 10									#### ADDS ROCKS, SENDS OUT A SIGNAL
+		print ("Player now has ", rocks, " rocks")	####
 	
 	#if food is more than none...
 	if food > 0:
