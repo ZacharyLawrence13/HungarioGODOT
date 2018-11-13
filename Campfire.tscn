@@ -7,7 +7,9 @@
 custom_solver_bias = 0.0
 radius = 175.603
 
-[node name="Campfire" type="Area2D"]
+[node name="Campfire" type="Area2D" groups=[
+"fire",
+]]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -17,9 +19,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0" groups=[
-"fire",
-]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
 shape = SubResource( 1 )
 

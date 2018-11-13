@@ -6,14 +6,14 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
 
-[node name="Main" type="Node" index="0"]
+[node name="Main" type="Node"]
 
 script = ExtResource( 1 )
 day = true
 
 [node name="White_square" type="Sprite" parent="." index="0"]
 
-position = Vector2( 1084.85, 473.016 )
+position = Vector2( 1092.21, 457.055 )
 texture = ExtResource( 2 )
 
 [node name="Campfire" parent="." index="1" instance=ExtResource( 3 )]
@@ -36,7 +36,7 @@ wait_time = 180.0
 one_shot = false
 autostart = true
 
-[connection signal="area_entered" from="Player" to="." method="_on_Player_area_entered"]
+[connection signal="body_entered" from="Player" to="." method="_on_Player_body_entered"]
 
 [connection signal="food_minus" from="Player" to="." method="_on_Player_food_minus"]
 
