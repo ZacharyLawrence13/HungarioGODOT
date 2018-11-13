@@ -1,34 +1,58 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/White_square.png" type="Texture" id=2]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Campfire.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
-day = null
+day = true
 
 [node name="White_square" type="Sprite" parent="." index="0"]
 
-position = Vector2( 557.286, 213.192 )
-scale = Vector2( 0.205011, 0.212385 )
+position = Vector2( 1084.85, 473.016 )
 texture = ExtResource( 2 )
 
-[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
+[node name="Campfire" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 644.378, 474.218 )
+
+[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
 
 scale = Vector2( 0.75, 0.75 )
-food_damage = 5
+food = 100
+heat = 100
+water = 100
 
-[node name="HUD" parent="." index="2" instance=ExtResource( 4 )]
+[node name="HUD" parent="." index="3" instance=ExtResource( 5 )]
 
-[node name="DayTimer" type="Timer" parent="." index="3"]
+[node name="DayTimer" type="Timer" parent="." index="4"]
 
 process_mode = 1
-wait_time = 150.0
+wait_time = 180.0
 one_shot = false
 autostart = true
+
+[connection signal="area_entered" from="Player" to="." method="_on_Player_area_entered"]
+
+[connection signal="food_minus" from="Player" to="." method="_on_Player_food_minus"]
+
+[connection signal="food_plus" from="Player" to="." method="_on_Player_food_plus"]
+
+[connection signal="health_minus" from="Player" to="." method="_on_Player_health_minus"]
+
+[connection signal="health_plus" from="Player" to="." method="_on_Player_health_plus"]
+
+[connection signal="heat_minus" from="Player" to="." method="_on_Player_heat_minus"]
+
+[connection signal="heat_plus" from="Player" to="." method="_on_Player_heat_plus"]
+
+[connection signal="water_minus" from="Player" to="." method="_on_Player_water_minus"]
+
+[connection signal="water_plus" from="Player" to="." method="_on_Player_water_plus"]
 
 [connection signal="timeout" from="DayTimer" to="." method="_on_DayTimer_timeout"]
 

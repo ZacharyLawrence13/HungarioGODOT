@@ -2,10 +2,19 @@ extends Area2D
 
 signal die
 
+signal hit_rock
+
 signal food_minus
+signal food_plus
+
 signal heat_minus
+signal heat_plus
+
 signal water_minus
+signal water_plus
+
 signal health_minus
+signal health_plus
 
 export (int) var speed
 
@@ -172,3 +181,15 @@ func _on_WaterDamageTimer_timeout():
 	health -= water_damage
 	emit_signal("health_minus")
 	print("Health left: ", health)
+
+
+func _on_Player_area_entered(area):
+	if area.is_in_group("fire"):
+		print("Entered a fire")
+		$AddHeatTimer.start()
+
+
+func _on_AddHeatTimer_timeout():
+	heat += 5
+	print("Adding 5 heat")
+	signal("heat_plus")

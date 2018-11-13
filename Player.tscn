@@ -52,7 +52,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 71.1106, 32.4032 )
 
-[node name="Player" type="Area2D" index="0"]
+[node name="Player" type="Area2D"]
 
 position = Vector2( 100, 100 )
 scale = Vector2( 0.2, 0.2 )
@@ -68,23 +68,23 @@ _sections_unfolded = [ "Transform" ]
 speed = 500
 health = 100
 health_max = 100
-food = 100
+food = 2
 food_max = 100
 food_damage = 5
-heat = 100
+heat = 2
 heat_max = 100
 heat_damage = 5
-water = 100
+water = 2
 water_max = 100
 water_damage = 5
-rocks = 0
+stone = 0
+wood = 0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-scale = Vector2( 1, 1 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 2
+frame = 7
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
@@ -120,7 +120,7 @@ _sections_unfolded = [ "Drag Margin" ]
 [node name="HungerTimer" type="Timer" parent="." index="3"]
 
 process_mode = 1
-wait_time = 15.0
+wait_time = 10.0
 one_shot = false
 autostart = true
 
@@ -134,7 +134,7 @@ autostart = false
 [node name="HeatTimer" type="Timer" parent="." index="5"]
 
 process_mode = 1
-wait_time = 10.0
+wait_time = 6.0
 one_shot = false
 autostart = true
 
@@ -148,7 +148,7 @@ autostart = false
 [node name="WaterTimer" type="Timer" parent="." index="7"]
 
 process_mode = 1
-wait_time = 8.0
+wait_time = 5.0
 one_shot = false
 autostart = true
 
@@ -156,6 +156,13 @@ autostart = true
 
 process_mode = 1
 wait_time = 3.0
+one_shot = true
+autostart = false
+
+[node name="AddHeatTimer" type="Timer" parent="." index="9"]
+
+process_mode = 1
+wait_time = 2.0
 one_shot = true
 autostart = false
 
@@ -170,5 +177,7 @@ autostart = false
 [connection signal="timeout" from="WaterTimer" to="." method="_on_WaterTimer_timeout"]
 
 [connection signal="timeout" from="WaterDamageTimer" to="." method="_on_WaterDamageTimer_timeout"]
+
+[connection signal="timeout" from="AddHeatTimer" to="." method="_on_AddHeatTimer_timeout"]
 
 

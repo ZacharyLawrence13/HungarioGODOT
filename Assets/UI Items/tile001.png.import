@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Day_Night_01.png-c56b75d7a1f79353404524d08a8ce1a0.stex"
+path="res://.import/tile001.png-251d1f1be4a9e8cedc8aa69d85f5b78c.stex"
 
 [deps]
 
-source_file="res://Assets/UI Items/Day_Night_01.png"
-dest_files=[ "res://.import/Day_Night_01.png-c56b75d7a1f79353404524d08a8ce1a0.stex" ]
+source_file="res://Assets/UI Items/tile001.png"
+dest_files=[ "res://.import/tile001.png-251d1f1be4a9e8cedc8aa69d85f5b78c.stex" ]
 
 [params]
 
