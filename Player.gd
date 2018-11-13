@@ -24,7 +24,8 @@ export (int) var water = 100
 export (int) var water_max = 100
 export (int) var water_damage = 5
 
-export (int) var rocks = 0
+export (int) var stone = 0
+export (int) var wood = 0
 
 var velocity = Vector2()
 var screensize = Vector2(1920, 1080)
@@ -77,8 +78,8 @@ func get_input():
 		print ($AnimatedSprite.animation)
 		print ("Subtracted 10 from this rock")		#### 
 		emit_signal("hit_rock")						#### ROCK STUFF
-		rocks += 10									#### ADDS ROCKS, SENDS OUT A SIGNAL
-		print ("Player now has ", rocks, " rocks")	####
+		stone += 10									#### ADDS ROCKS, SENDS OUT A SIGNAL
+		print ("Player now has ", stone, " stones")	####
 		
 	if Input.is_action_just_released("ui_attack"):
 		$AnimatedSprite.animation = "idle"
