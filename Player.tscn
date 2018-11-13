@@ -52,7 +52,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 71.1106, 32.4032 )
 
-[node name="Player" type="Area2D" index="0"]
+[node name="Player" type="Area2D"]
 
 position = Vector2( 100, 100 )
 scale = Vector2( 0.2, 0.2 )
@@ -68,13 +68,13 @@ _sections_unfolded = [ "Transform" ]
 speed = 500
 health = 100
 health_max = 100
-food = 100
+food = 2
 food_max = 100
 food_damage = 5
-heat = 100
+heat = 2
 heat_max = 100
 heat_damage = 5
-water = 100
+water = 2
 water_max = 100
 water_damage = 5
 rocks = 0
@@ -84,7 +84,7 @@ rocks = 0
 scale = Vector2( 1, 1 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 8
+frame = 10
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]

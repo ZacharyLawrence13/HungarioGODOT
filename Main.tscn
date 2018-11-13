@@ -5,7 +5,7 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 day = null
@@ -19,9 +19,9 @@ texture = ExtResource( 2 )
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
 scale = Vector2( 0.75, 0.75 )
-food = 2
-heat = 2
-water = 2
+food = 100
+heat = 100
+water = 100
 
 [node name="HUD" parent="." index="2" instance=ExtResource( 4 )]
 

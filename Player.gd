@@ -110,11 +110,11 @@ func check_stats():
 		health = health_max
 		
 	if health <= 0:
-		signal("die")
+		pass
+		#signal("die")
 
 
 func _on_HungerTimer_timeout():
-	#if food is more than none
 	if food > 0:
 		#subtract 1 food after timer
 		food -= 1
