@@ -52,7 +52,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 71.1106, 32.4032 )
 
-[node name="Player" type="Area2D" groups=[
+[node name="Player" type="Area2D" index="0" groups=[
 "player",
 ]]
 
@@ -86,7 +86,7 @@ wood = 0
 
 frames = SubResource( 1 )
 animation = "idle"
-frame = 9
+frame = 11
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
