@@ -52,7 +52,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 71.1106, 32.4032 )
 
-[node name="Player" type="Area2D" index="0" groups=[
+[node name="Player" type="Area2D" groups=[
 "player",
 ]]
 
@@ -86,7 +86,7 @@ wood = 0
 
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
+frame = 9
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
@@ -165,7 +165,14 @@ autostart = false
 
 process_mode = 1
 wait_time = 2.0
-one_shot = true
+one_shot = false
+autostart = false
+
+[node name="AddWaterTimer" type="Timer" parent="." index="10"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = false
 autostart = false
 
 [connection signal="timeout" from="HungerTimer" to="." method="_on_HungerTimer_timeout"]
@@ -181,5 +188,7 @@ autostart = false
 [connection signal="timeout" from="WaterDamageTimer" to="." method="_on_WaterDamageTimer_timeout"]
 
 [connection signal="timeout" from="AddHeatTimer" to="." method="_on_AddHeatTimer_timeout"]
+
+[connection signal="timeout" from="AddWaterTimer" to="." method="_on_AddWaterTimer_timeout"]
 
 

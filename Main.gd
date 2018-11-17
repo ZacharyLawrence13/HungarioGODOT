@@ -60,14 +60,28 @@ func _on_Player_heat_plus():
 
 
 func _on_Player_water_plus():
-	pass # replace with function body
+	$HUD/Statpanel/WaterBar.value = $Player.water
 
 
 func _on_Player_health_plus():
 	pass # replace with function body
 
 
-func _on_Player_body_entered(body):
-	if body.is_in_group("fire"):
-		print("colliding with: ", body)
+func _on_Player_area_entered(area):
+	if area.is_in_group("fire"):
+		print("Entering: ", area)
 		$Player/AddHeatTimer.start()
+	
+	elif area.is_in_group("lake"):
+		print("Entering: ", area)
+		$Player/AddWaterTimer.start()
+
+
+func _on_Player_area_exited(area):
+	if area.is_in_group("fire"):
+		print("Exiting: ", area)
+		$Player/AddHeatTimer.stop()
+	
+	elif area.is_in_group("lake"):
+		print("Entering: ", area)
+		$Player/AddWaterTimer.stop()

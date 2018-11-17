@@ -1,42 +1,52 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/White_square.png" type="Texture" id=2]
 [ext_resource path="res://Campfire.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Lake.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=6]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 day = true
 
 [node name="White_square" type="Sprite" parent="." index="0"]
 
-position = Vector2( 1092.21, 457.055 )
+position = Vector2( 1185.51, 222.527 )
+scale = Vector2( 0.579462, 0.546682 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="Campfire" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 644.378, 474.218 )
+rotation = -0.785398
 
-[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
+[node name="Lake" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 1328.75, 610.705 )
+
+[node name="Player" parent="." index="3" instance=ExtResource( 5 )]
 
 scale = Vector2( 0.75, 0.75 )
 food = 100
 heat = 100
 water = 100
 
-[node name="HUD" parent="." index="3" instance=ExtResource( 5 )]
+[node name="HUD" parent="." index="4" instance=ExtResource( 6 )]
 
-[node name="DayTimer" type="Timer" parent="." index="4"]
+[node name="DayTimer" type="Timer" parent="." index="5"]
 
 process_mode = 1
 wait_time = 180.0
 one_shot = false
 autostart = true
 
-[connection signal="body_entered" from="Player" to="." method="_on_Player_body_entered"]
+[connection signal="area_entered" from="Player" to="." method="_on_Player_area_entered"]
+
+[connection signal="area_exited" from="Player" to="." method="_on_Player_area_exited"]
 
 [connection signal="food_minus" from="Player" to="." method="_on_Player_food_minus"]
 

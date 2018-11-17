@@ -186,4 +186,10 @@ func _on_WaterDamageTimer_timeout():
 func _on_AddHeatTimer_timeout():
 	heat += 5
 	print("Adding 5 heat")
-	signal("heat_plus")
+	emit_signal("heat_plus")
+
+
+func _on_AddWaterTimer_timeout():
+	water += 10
+	print("Adding 10 water")
+	emit_signal("water_plus")
