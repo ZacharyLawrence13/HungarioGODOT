@@ -57,7 +57,6 @@ extents = Vector2( 71.1106, 32.4032 )
 ]]
 
 position = Vector2( 100, 100 )
-scale = Vector2( 0.2, 0.2 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -70,13 +69,13 @@ _sections_unfolded = [ "Transform" ]
 speed = 500
 health = 100
 health_max = 100
-food = 2
+food = 100
 food_max = 100
 food_damage = 5
-heat = 2
+heat = 100
 heat_max = 100
 heat_damage = 5
-water = 2
+water = 100
 water_max = 100
 water_damage = 5
 stone = 0
@@ -86,7 +85,7 @@ wood = 0
 
 frames = SubResource( 1 )
 animation = "idle"
-frame = 11
+frame = 10
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
@@ -122,7 +121,7 @@ _sections_unfolded = [ "Drag Margin" ]
 [node name="HungerTimer" type="Timer" parent="." index="3"]
 
 process_mode = 1
-wait_time = 10.0
+wait_time = 8.0
 one_shot = false
 autostart = true
 
@@ -136,7 +135,7 @@ autostart = false
 [node name="HeatTimer" type="Timer" parent="." index="5"]
 
 process_mode = 1
-wait_time = 6.0
+wait_time = 5.0
 one_shot = false
 autostart = true
 
@@ -150,7 +149,7 @@ autostart = false
 [node name="WaterTimer" type="Timer" parent="." index="7"]
 
 process_mode = 1
-wait_time = 5.0
+wait_time = 3.0
 one_shot = false
 autostart = true
 

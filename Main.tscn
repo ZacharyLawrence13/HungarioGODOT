@@ -31,11 +31,6 @@ position = Vector2( 1328.75, 610.705 )
 
 [node name="Player" parent="." index="3" instance=ExtResource( 5 )]
 
-scale = Vector2( 0.75, 0.75 )
-food = 100
-heat = 100
-water = 100
-
 [node name="HUD" parent="." index="4" instance=ExtResource( 6 )]
 
 [node name="DayTimer" type="Timer" parent="." index="5"]
@@ -47,27 +42,7 @@ autostart = true
 
 [node name="Tree1" parent="." index="6" instance=ExtResource( 7 )]
 
-position = Vector2( 425.643, 105.485 )
-
-[connection signal="area_entered" from="Player" to="." method="_on_Player_area_entered"]
-
-[connection signal="area_exited" from="Player" to="." method="_on_Player_area_exited"]
-
-[connection signal="food_minus" from="Player" to="." method="_on_Player_food_minus"]
-
-[connection signal="food_plus" from="Player" to="." method="_on_Player_food_plus"]
-
-[connection signal="health_minus" from="Player" to="." method="_on_Player_health_minus"]
-
-[connection signal="health_plus" from="Player" to="." method="_on_Player_health_plus"]
-
-[connection signal="heat_minus" from="Player" to="." method="_on_Player_heat_minus"]
-
-[connection signal="heat_plus" from="Player" to="." method="_on_Player_heat_plus"]
-
-[connection signal="water_minus" from="Player" to="." method="_on_Player_water_minus"]
-
-[connection signal="water_plus" from="Player" to="." method="_on_Player_water_plus"]
+position = Vector2( 442.299, 123.992 )
 
 [connection signal="timeout" from="DayTimer" to="." method="_on_DayTimer_timeout"]
 
